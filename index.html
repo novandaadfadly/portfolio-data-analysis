@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Portfolio</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.filter-button').click(function(){
+				var value = $(this).attr('data-filter');
+				if(value == 'all') {
+					$('.filter').show('1000');
+				} else {
+					$('.filter').not('.'+value).hide('3000');
+					$('.filter').filter('.'+value).show('3000');
+				}
+				if($(this).hasClass('active')) {
+					$(this).removeClass('active');
+				} else {
+					$(this).addClass('active');
+				}
+			});
+		});
+	</script>
+	<style>
+		.portfolio-menu {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		.portfolio-menu button {
+			display: inline-block;
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			margin-right: 10px;
+			cursor: pointer;
+			transition: all 0.5s;
+		}
+		.portfolio-menu button.active,
+		.portfolio-menu button:hover {
+			background-color: #0099cc;
+		}
+		.portfolio-item {
+			display: inline-block;
+			margin-bottom: 30px;
+			width: calc(33.33% - 10px);
+			background-color: #fff;
+			box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+			border-radius: 5px;
+			overflow: hidden;
+			transition: all 0.5s;
+		}
+		.portfolio-item:hover {
+			box-shadow: 0px 6px 12px rgba(0,0,0,0.16);
+		}
+		.portfolio-item img {
+			width: 100%;
+			height: auto;
+		}
+		.portfolio-item-content {
+			padding: 10px;
+		}
+		.portfolio-item-title {
+			font-size: 20px;
+			font-weight: bold;
+			margin: 10px 0px;
+		}
+		.portfolio-item-description {
+			font-size: 14px;
+			margin: 10px 0px;
+			line-height: 1.5;
+		}
+		.filter {
+			display: none;
+		}
+		.portfolio-item-link {
+			display: block;
+			margin-top: 10px;
+			font-size: 14px;
+			color: #0099cc;
+			text-decoration: none;
+			transition: all 0.5s;
+		}
+		.portfolio-item-link:hover {
+			color: #006699;
+		}
+        .portfolio {
+            display: flex;
+	        flex-wrap: wrap;
+        	justify-content: space-around;
+        }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Novanda Akhsin Diar Fadly's Data Analysis Portfolio</h1>
+	</header>
+	<section class="portfolio-menu">
+		<button class="filter-button active" data-filter="all">All</button>
+		<button class="filter-button" data-filter="python">Python</button>
+		<button class="filter-button" data-filter="R">R</button>
+		<button class="filter-button" data-filter="SQL">SQL</button>
+	</section>
+	<section class="portfolio">
+		<div class="portfolio-item filter python">
+            <img src="images/bank_debt.jpg" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Which Debts Are Worth The Bank's Effort</h2>
+                <p class="portfolio-item-description">
+                    The "Which Debts Are Worth The Bank's Effort" project is a data analysis project that involves analyzing a bank's recovery strategies for delinquent debts. The project aims to identify whether the extra effort and cost incurred by the bank at higher recovery strategy levels result in a significant increase in the amount of money recovered from customers. The analysis is based on a dataset of customer information, including demographic data and loan information, which is used to calculate the expected recovery amount for each customer. The project involves data cleaning and preparation, exploratory data analysis, and statistical analysis to determine whether there is a significant discontinuity in the amount recovered at higher recovery strategy levels. The project has practical implications for the bank's collection efforts and can help inform decisions about how to allocate resources for debt collection.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/11uH5Jhe5ObDH5y0pNahHc_DiK3ioWqD5?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter python">
+            <img src="images/Nobel_Prize.png" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    A Visual History of Nobel Prize Winners
+                    </h2>
+                <p class="portfolio-item-description">
+                    The Nobel Prize is perhaps the world's most well known scientific award. Except for the honor, prestige and substantial prize money the recipient also gets a gold medal showing Alfred Nobel (1833 - 1896) who established the prize. Every year it's given to scientists and scholars in the categories chemistry, literature, physics, physiology or medicine, economics, and peace. The first Nobel Prize was handed out in 1901, and at that time the Prize was very Eurocentric and male-focused, but nowadays it's not biased in any way whatsoever. Surely. Right?
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1mI9cB1tLwfu35Og-9m0IFoeqHNXHbkij?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter python">
+            <img src="images/employee.jpg" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Streamlining Employee Data
+                    </h2>
+                <p class="portfolio-item-description">
+                    The "Streamlining Employee Data" project is a data analysis project that involves organizing and merging human resources data for a small business. The project aims to create a structured and unified view of employee data by gathering all available information about a specific employee into a single file. The analysis is based on scattered data from various sources, including Excel files, CSVs, JSON files, and SQL databases. The project involves data cleaning and preparation, merging data from different sources into a pandas DataFrame, and exporting the merged data to a CSV file. The project addresses the challenge of data management in a growing business and provides a foundation for future data-driven decision-making.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1mI9cB1tLwfu35Og-9m0IFoeqHNXHbkij?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter python">
+            <img src="images/sport-retail.jpg" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Optimizing Online Sports Retail Revenue
+                    </h2>
+                <p class="portfolio-item-description">
+                    The project "Optimizing Online Sports Retail Revenue" is a data analysis portfolio that focuses on analyzing product data, revenue, and website traffic for an online sports clothing company. The goal of the analysis is to identify areas where revenue can be improved and provide recommendations to the marketing and sales teams. The analysis includes examining pricing, reviews, descriptions, and ratings of products.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1znKCJGV56eIOR88R8H3yBwc20V9W7_eW?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter python">
+            <img src="images/medical-insurance.jpg" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Medical Insurance - Exploratory Data Analysis Using Python
+                    </h2>
+                <p class="portfolio-item-description">
+                    The "Medical Insurance - Exploratory Data Analysis Using Python" project is a data analysis project that focuses on medical insurance datasets. The project aims to explore and analyze the data to uncover insights and patterns that can inform future decision-making. The analysis includes descriptive statistics, data visualization, and hypothesis testing to identify relationships between variables such as age, gender, BMI, smoking status, and medical costs. The project provides insights into the factors that drive medical costs and the differences in medical costs between different groups of individuals. The project demonstrates the use of Python for data analysis and provides a foundation for further research and analysis in the field of medical insurance.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1nKbT9d7FXFjR1jYRO4YSFtAFm9IkqYkA?usp=sharing">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter python">
+            <img src="images/hr-attrition.jpg" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    IBM HR Attrition & Performance Analysis Using Python
+                </h2>
+                <p class="portfolio-item-description">
+                    The "IBM HR Attrition & Performance" project is a data analysis project that utilizes the IBM HR Attrition & Performance datasets from Kaggle. The project aims to explore and analyze the data to identify factors that contribute to employee attrition and to develop strategies to improve employee retention and performance. The dataset includes a wide range of employee-related variables such as age, gender, job role, performance ratings, and job satisfaction scores, which can be analyzed to identify patterns and trends that can inform human resource strategies.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1criGQNd9GBBo5h1Y1qDgtudk9flwpOdE?usp=sharing">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter python">
+            <img src="images/titanic.jpg" alt="Python project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Titanic - Exploratory Data Analysis
+                </h2>
+                <p class="portfolio-item-description">The Titanic dataset is a popular dataset used for exploratory data analysis in data science. It contains information about the passengers who were aboard the Titanic, including their demographics, cabin class, fare, and survival status. Exploring the Titanic dataset can help data scientists develop a deeper understanding of how different factors may have affected passenger survival rates on the ill-fated voyage. It's also a great dataset for practicing data analysis skills and learning how to use data visualization tools.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/161KbBeOoTGEzzUPg7UDC8YRJHR84etiB?usp=sharing">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter R">
+            <img src="images/covid19.jpg" alt="R project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Visualizing COVID-19
+                </h2>
+                <p class="portfolio-item-description">
+                    This portfolio focuses on COVID-19, the respiratory virus that was first identified in Wuhan, China, in December 2019. The World Health Organization (WHO) declared COVID-19 a pandemic on March 11, 2020, after it had spread across the globe, causing major outbreaks in countries such as Iran, South Korea, and Italy. The virus spreads through respiratory droplets, and governments have implemented country-wide policies such as shutdowns and quarantines to slow the spread. To monitor and learn from the pandemic, organizations such as the Johns Hopkins University Center for Systems Science and Engineering have created publicly available data repositories to consolidate data from sources like the WHO, the Centers for Disease Control and Prevention (CDC), and the Ministry of Health from multiple countries. This notebook visualizes COVID-19 data from the first few weeks of the outbreak to examine at what point the virus became a global pandemic. It's important to note that the data used in this project was pulled on March 17, 2020, and may not reflect the most up-to-date information available.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1E-hYeiY_PUMdZ2a58sU56VnRb5STRlUs?usp=sharing">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter R">
+            <img src="images/diversity.jpg" alt="R project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Visualizing Inequalities in Life Expectancy
+                </h2>
+                <p class="portfolio-item-description">
+                    Life expectancy at birth is a measure of the average a living being is expected to live. It takes into account several demographic factors like gender, country, or year of birth. Life expectancy at birth can vary along time or between countries because of many causes: the evolution of medicine, the degree of development of countries, or the effect of armed conflicts. Life expectancy varies between gender, as well. The data shows that women live longer that men. Why? Several potential factors, including biological reasons and the theory that women tend to be more health conscious.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1ePsoWYjxmaZgH-ic6lds-V52NJ1Uy2di?usp=sharing">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter SQL">
+            <img src="images/education.jpg" alt="SQL project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Analyzing NYC Public School Test Result Scores
+                </h2>
+                <p class="portfolio-item-description">
+                    In this project, we will take a look at data on SATs across public schools in New York City. Every year, American high school students take SATs, which are standardized tests intended to measure literacy, numeracy, and writing skills. There are three sections - reading, math, and writing, each with a maximum score of 800 points. These tests are extremely important for students and colleges, as they play a pivotal role in the admissions process. Analyzing the performance of schools is important for a variety of stakeholders, including policy and education professionals, researchers, government, and even parents considering which school their children should attend. 
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1g16ylv3acf8ihxKCp_x6E8-VYRO3CapP?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter SQL">
+            <img src="images/card.jpg" alt="SQL project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Analyze International Debt Statistics
+                </h2>
+                <p class="portfolio-item-description">
+                    The project "Analyze International Debt Statistics" involves exploring and analyzing a dataset containing information about the amount of debt owed by developing countries across several categories, collected by The World Bank. Through this project, we will find answers to questions like the total amount of debt owed by the countries listed in the dataset, which country owns the maximum amount of debt, and the average amount of debt owed by countries across different debt indicators.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1euBgpY8hVn5YKkoYIqz9HME9zS7vNkR3?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+        <div class="portfolio-item filter SQL">
+            <img src="images/sport-retail.jpg" alt="SQL project">
+            <div class="portfolio-item-content">
+                <h2 class="portfolio-item-title">
+                    Optimizing Online Sports Retail Revenue
+                </h2>
+                <p class="portfolio-item-description">
+                    The project "Optimizing Online Sports Retail Revenue" is a data analysis portfolio that focuses on analyzing product data, revenue, and website traffic for an online sports clothing company. The goal of the analysis is to identify areas where revenue can be improved and provide recommendations to the marketing and sales teams. The analysis includes examining pricing, reviews, descriptions, and ratings of products.
+                </p>
+                <a class="portfolio-item-link" href="https://colab.research.google.com/drive/1N0nNR5zx0OXfI-VTAsIjoCzPXMXkMVlh?usp=share_link">View on Google Colab</a>
+            </div>
+        </div>
+    </section>
+</body>
